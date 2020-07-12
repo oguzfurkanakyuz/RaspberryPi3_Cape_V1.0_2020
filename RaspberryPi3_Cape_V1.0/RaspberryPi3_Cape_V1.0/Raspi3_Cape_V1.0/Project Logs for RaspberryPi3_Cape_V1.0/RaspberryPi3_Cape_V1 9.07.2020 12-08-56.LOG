@@ -1,0 +1,5 @@
+Change Component Comment : Designator=L1 Old Comment=3.3uH New Comment=2.2uH
+Change Component Comment : Designator=L2 Old Comment=3.3uH New Comment=2.2uH
+Added Member To Class: ClassName=RaspberryPi3_Cape_V1.0 Member=Component L1 2.2uH
+Added Member To Class: ClassName=RaspberryPi3_Cape_V1.0 Member=Component L2 2.2uH
+Added Room: Name=RaspberryPi3_Cape_V1.0
