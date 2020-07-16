@@ -128,63 +128,47 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\NC Drill\RaspberryPi3_Cape_V1.0.DRR
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.EXTREP
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GBO
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GBP
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GBS
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GKO
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GPB
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GPT
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GTO
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.REP
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GTP
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument12]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\NC Drill\RaspberryPi3_Cape_V1.0.LDP
-DItemRevisionGUID=
-
-[GeneratedDocument13]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.REP
-DItemRevisionGUID=
-
-[GeneratedDocument14]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\Gerber\RaspberryPi3_Cape_V1.0.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument15]
-DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\NC Drill\RaspberryPi3_Cape_V1.0_Drill.cam
+DocumentPath=Project Outputs for RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.TXT
 DItemRevisionGUID=
 
 [Parameter1]
@@ -560,7 +544,7 @@ OutputDefault12=0
 Configuration12_Name1=ForceUpdateSettings
 Configuration12_Item1=False
 Configuration12_Name2=OutputConfigurationParameter1
-Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Metric|GerberUnit=Metric|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=39|MinusApertureTolerance=39|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16842751~1|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16777217~1|PlotDrillGuideLayerPair0_Backdrill=False|PlotDrillGuideLayerPair0_DrillType=Regular|PlotDrillGuideLayerPair0_HighLayer=Bottom Layer|PlotDrillGuideLayerPair0_LowLayer=Top Layer|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=True|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=39|PlusApertureTolerance=39|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False
+Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Metric|GerberUnit=Metric|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=39|MinusApertureTolerance=39|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16777217~1,16842751~1,16973837~1|PlotDrillGuideLayerPair0_Backdrill=False|PlotDrillGuideLayerPair0_DrillType=Regular|PlotDrillGuideLayerPair0_HighLayer=Bottom Layer|PlotDrillGuideLayerPair0_LowLayer=Top Layer|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=True|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=39|PlusApertureTolerance=39|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False
 
 [OutputGroup6]
 Name=Report Outputs
