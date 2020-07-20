@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=C5 Old Footprint=Cap_Pol_P-2.5mm New Footprint=CAP_POL_P-1.5mm
+Change Component Footprint: Designator=C6 Old Footprint=Cap_Pol_P-2.5mm New Footprint=CAP_POL_P-1.5mm
+Change Component Footprint: Designator=C7 Old Footprint=Cap_Pol_P-2.5mm New Footprint=Cap_Pol_P-2mm
+Change Component Footprint: Designator=C8 Old Footprint=Cap_Pol_P-2.5mm New Footprint=Cap_Pol_P-2mm
+Change Component Footprint: Designator=C12 Old Footprint=Cap_Pol_P-2.5mm New Footprint=Cap_Pol_P-2mm
+Added Member To Class: ClassName=RaspberryPi3_Cape_V1.0 Member=Component U2 RaspberryPi_3
+Added Room: Name=RaspberryPi3_Cape_V1.0
