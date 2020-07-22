@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=GPIO26 Pin=R4-1
+Removed Pin From Net: NetName=GPIO20 Pin=R6-1
+Added Pin To Net: NetName=GPIO20 Pin=R4-1
+Added Pin To Net: NetName=GPIO26 Pin=R6-1
+Added Room: Name=RaspberryPi3_Cape_V1.0

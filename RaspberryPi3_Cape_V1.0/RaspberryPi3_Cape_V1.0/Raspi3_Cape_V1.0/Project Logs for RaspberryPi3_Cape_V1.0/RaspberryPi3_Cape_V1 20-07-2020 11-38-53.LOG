@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=11.1V Pin=J1-1
+Removed Pin From Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=11.1V Pin=J1-2
+Added Member To Class: ClassName=RaspberryPi3_Cape_V1.0 Member=Component C19 100nF
+Added Room: Name=RaspberryPi3_Cape_V1.0

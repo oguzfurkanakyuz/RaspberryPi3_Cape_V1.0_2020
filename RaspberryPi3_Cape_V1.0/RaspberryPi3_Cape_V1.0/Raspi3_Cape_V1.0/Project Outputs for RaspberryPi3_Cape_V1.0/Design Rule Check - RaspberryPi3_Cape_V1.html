@@ -1,0 +1,430 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">22.07.2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">02:53:49</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc" class="file"><acronym title="F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc">F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">30</td></tr>
+</table>
+</td>
+</table><a name="IDHI3RQS44NGYVBT4AOWADDAWLFGAKN5KQB1MUIUHEK0FJFHW1L25C"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUZOHA5LRMG2KKJCXY23WRQXBOEI1B3PTMJ00FPDERLLDZL33EJZE">Clearance Constraint (Gap=0.4mm) (All),(All)</a></td>
+<td class="column2">19</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJPYZY4K4FJA0EHRCNMKDTQEMADNGAERXCFTE35NWK4UXKTRHTALM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWVLTO5FMFB1CGWQXLHQUIXE3YGZJ1A1TTXXYIRNOMWSNU1XW1IVG">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJKRQ3ZBDGKDKLHYSAKPIPSQTBEIETA3GTGVZZBLM3JQDKH4PR0II">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJU4X4WABIODUQMLPEJPU1JVFD0DJBT153UE1YKND34ZPEZNGDKI">Width Constraint (Min=0.254mm) (Max=1mm) (Preferred=0.4mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEBAUTT4VJGD4HXWTFD5VBTCBLG5EW3OCKTKJW5CALYHBFU4FCV5E">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBZCUVVQ35CSSE0ZVM5JXLYOKUM0QVAH3HQ4E0UCQL1XLM5XQ33N">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZX3HOGI54GZSKS4DIVABOGVZXH0WQMQ1TPR2RXI0K0XN3G5EPOMG">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPS2AH4HVX3ZIEZZT4SPOMICQSNDKHQ52RVZUN0E00JGSOPBD4NNF">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDG0LSINVRI5INMH155VS0C5YCVIJ4DUNS4R2VWENRB4XBQFUFMZWO">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSOB3SACOKBELI0VEB2HVQXRWMFME2VA3C0ELY4EKRJBGKJP3R3BH">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVJWFKQ52R2G5FTBFID4DCOLUAHJIRCOX5HJNWPJORJXFM2W1T5SF">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1OGKWUR5S20FBV00RHFOTUCI2CUQAJYCT3OLOUH3MUMVKUJA5AAC">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">30</td>
+</tr>
+</table><br><a name="IDUZOHA5LRMG2KKJCXY23WRQXBOEI1B3PTMJ00FPDERLLDZL33EJZE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.4mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9310.109mil|Location2.X=9327.107mil|Location1.Y=2063.215mil|Location2.Y=2080.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9310.109mil|Location2.X=9327.107mil|Location1.Y=2063.215mil|Location2.Y=2080.213mil|Absolute=True">Clearance Constraint: (0.3mm &lt; 0.4mm) Between Pad C17-1(76.5mm,1.875mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9279.105mil|Location2.X=9296.103mil|Location1.Y=2382.604mil|Location2.Y=2399.602mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9279.105mil|Location2.X=9296.103mil|Location1.Y=2382.604mil|Location2.Y=2399.602mil|Absolute=True">Clearance Constraint: (0.375mm &lt; 0.4mm) Between Pad D3-2(77.4mm,11.5mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9455.188mil|Location2.X=9472.186mil|Location1.Y=2382.604mil|Location2.Y=2399.602mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9455.188mil|Location2.X=9472.186mil|Location1.Y=2382.604mil|Location2.Y=2399.602mil|Absolute=True">Clearance Constraint: (0.375mm &lt; 0.4mm) Between Pad D3-2(79.608mm,13.405mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9440.91mil|Location2.X=9452.408mil|Location1.Y=2374.134mil|Location2.Y=2385.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9440.91mil|Location2.X=9452.408mil|Location1.Y=2374.134mil|Location2.Y=2385.632mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Pad D3-2(80.7mm,10.9mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9417.252mil|Location2.X=9428.751mil|Location1.Y=2256.26mil|Location2.Y=2267.758mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9417.252mil|Location2.X=9428.751mil|Location1.Y=2256.26mil|Location2.Y=2267.758mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Pad D8-1(81.027mm,8.284mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9362.071mil|Location2.X=9373.57mil|Location1.Y=2282.499mil|Location2.Y=2293.998mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9362.071mil|Location2.X=9373.57mil|Location1.Y=2282.499mil|Location2.Y=2293.998mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Pad L2-1(78.4mm,7.725mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9255.772mil|Location2.X=9267.271mil|Location1.Y=2282.499mil|Location2.Y=2293.998mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9255.772mil|Location2.X=9267.271mil|Location1.Y=2282.499mil|Location2.Y=2293.998mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Pad L2-2(75.7mm,7.725mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9418.174mil|Location2.X=9429.672mil|Location1.Y=2228.366mil|Location2.Y=2239.865mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9418.174mil|Location2.X=9429.672mil|Location1.Y=2228.366mil|Location2.Y=2239.865mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Pad R15-1(81.05mm,6.325mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9473.741mil|Location2.X=9493.881mil|Location1.Y=2228.323mil|Location2.Y=2248.612mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9473.741mil|Location2.X=9493.881mil|Location1.Y=2228.323mil|Location2.Y=2248.612mil|Absolute=True">Clearance Constraint: (0.194mm &lt; 0.4mm) Between Pad R15-2(82.6mm,6.325mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9244.656mil|Location2.X=9261.654mil|Location1.Y=2069.12mil|Location2.Y=2086.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9244.656mil|Location2.X=9261.654mil|Location1.Y=2069.12mil|Location2.Y=2086.118mil|Absolute=True">Clearance Constraint: (0.275mm &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (75.7mm,2.275mm)(75.7mm,7.725mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9248.593mil|Location2.X=9265.591mil|Location1.Y=2264.002mil|Location2.Y=2281mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9248.593mil|Location2.X=9265.591mil|Location1.Y=2264.002mil|Location2.Y=2281mil|Absolute=True">Clearance Constraint: (0.075mm &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (75.7mm,7.725mm)(75.9mm,7.925mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9248.593mil|Location2.X=9265.591mil|Location1.Y=2375.222mil|Location2.Y=2392.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9248.593mil|Location2.X=9265.591mil|Location1.Y=2375.222mil|Location2.Y=2392.22mil|Absolute=True">Clearance Constraint: (0.075mm &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (75.9mm,7.925mm)(75.9mm,16.775mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9312.331mil|Location2.X=9332.471mil|Location1.Y=2066.898mil|Location2.Y=2087.188mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9312.331mil|Location2.X=9332.471mil|Location1.Y=2066.898mil|Location2.Y=2087.188mil|Absolute=True">Clearance Constraint: (0.16mm &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (77.45mm,1.875mm)(80.075mm,4.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9329.794mil|Location2.X=9346.792mil|Location1.Y=2383.047mil|Location2.Y=2400.045mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9329.794mil|Location2.X=9346.792mil|Location1.Y=2383.047mil|Location2.Y=2400.045mil|Absolute=True">Clearance Constraint: (0.397mm &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (78.075mm,11.872mm)(78.4mm,11.547mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9332.544mil|Location2.X=9344.042mil|Location1.Y=2258.878mil|Location2.Y=2270.376mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9332.544mil|Location2.X=9344.042mil|Location1.Y=2258.878mil|Location2.Y=2270.376mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (78.4mm,7.725mm)(78.4mm,11.547mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9382.567mil|Location2.X=9402.012mil|Location1.Y=2141.106mil|Location2.Y=2162.044mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9382.567mil|Location2.X=9402.012mil|Location1.Y=2141.106mil|Location2.Y=2162.044mil|Absolute=True">Clearance Constraint: (0.303mm &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (80.075mm,4.5mm)(81.725mm,4.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9435.953mil|Location2.X=9447.452mil|Location1.Y=2280.866mil|Location2.Y=2292.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9435.953mil|Location2.X=9447.452mil|Location1.Y=2280.866mil|Location2.Y=2292.365mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (81.027mm,8.284mm)(81.038mm,8.272mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9436.414mil|Location2.X=9447.912mil|Location1.Y=2280.406mil|Location2.Y=2291.904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9436.414mil|Location2.X=9447.912mil|Location1.Y=2280.406mil|Location2.Y=2291.904mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (81.038mm,6.337mm)(81.038mm,8.272mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9433.995mil|Location2.X=9445.493mil|Location1.Y=2206.414mil|Location2.Y=2217.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9433.995mil|Location2.X=9445.493mil|Location1.Y=2206.414mil|Location2.Y=2217.913mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.4mm) Between Region (0 hole(s)) Top Layer And Track (81.038mm,6.337mm)(81.05mm,6.325mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDBZCUVVQ35CSSE0ZVM5JXLYOKUM0QVAH3HQ4E0UCQL1XLM5XQ33N"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7042.682mil|Location2.X=7169.916mil|Location1.Y=1692.289mil|Location2.Y=1819.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7042.682mil|Location2.X=7169.916mil|Location1.Y=1692.289mil|Location2.Y=1819.523mil|Absolute=True">Hole Size Constraint: (3.2mm &gt; 2.54mm) Via (21.707mm,-5.197mm) from Top Layer to Bottom Layer Actual Hole Size = 3.2mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9333.731mil|Location2.X=9460.965mil|Location1.Y=1692.289mil|Location2.Y=1819.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9333.731mil|Location2.X=9460.965mil|Location1.Y=1692.289mil|Location2.Y=1819.523mil|Absolute=True">Hole Size Constraint: (3.2mm &gt; 2.54mm) Via (79.9mm,-5.197mm) from Top Layer to Bottom Layer Actual Hole Size = 3.2mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPS2AH4HVX3ZIEZZT4SPOMICQSNDKHQ52RVZUN0E00JGSOPBD4NNF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8323.527mil|Location2.X=8334.777mil|Location1.Y=3039.028mil|Location2.Y=3051.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8323.527mil|Location2.X=8334.777mil|Location1.Y=3039.028mil|Location2.Y=3051.669mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.244mm &lt; 0.254mm) Between Pad L1-2(53.575mm,26.625mm) on Top Layer And Via (51.925mm,28.025mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.244mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8902.55mil|Location2.X=8913.8mil|Location1.Y=2486.364mil|Location2.Y=2497.614mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8902.55mil|Location2.X=8913.8mil|Location1.Y=2486.364mil|Location2.Y=2497.614mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad R11-2(67.25mm,12.675mm) on Bottom Layer And Via (67.475mm,14.45mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7668.778mil|Location2.X=7680.028mil|Location1.Y=2268.604mil|Location2.Y=2279.854mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7668.778mil|Location2.X=7680.028mil|Location1.Y=2268.604mil|Location2.Y=2279.854mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.109mm &lt; 0.254mm) Between Pad R5-1(36.475mm,8.6mm) on Bottom Layer And Via (36.137mm,7.063mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.109mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8685.686mil|Location2.X=8696.936mil|Location1.Y=1910.575mil|Location2.Y=1921.825mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8685.686mil|Location2.X=8696.936mil|Location1.Y=1910.575mil|Location2.Y=1921.825mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.22mm &lt; 0.254mm) Between Via (61.005mm,-1.125mm) from Top Layer to Bottom Layer And Via (62.928mm,-1.125mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.22mm] / [Bottom Solder] Mask Sliver [0.22mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9108.329mil|Location2.X=9119.579mil|Location1.Y=2533.608mil|Location2.Y=2544.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9108.329mil|Location2.X=9119.579mil|Location1.Y=2533.608mil|Location2.Y=2544.858mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.25mm &lt; 0.254mm) Between Via (71.725mm,14.7mm) from Top Layer to Bottom Layer And Via (73.679mm,14.7mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.25mm] / [Bottom Solder] Mask Sliver [0.25mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDG0LSINVRI5INMH155VS0C5YCVIJ4DUNS4R2VWENRB4XBQFUFMZWO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8886.966mil|Location2.X=8898.216mil|Location1.Y=3132.893mil|Location2.Y=3144.143mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8886.966mil|Location2.X=8898.216mil|Location1.Y=3132.893mil|Location2.Y=3144.143mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.156mm &lt; 0.254mm) Between Pad C13-2(66.7mm,30.5mm) on Top Layer And Text "C13" (67.279mm,29.794mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.156mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9353.087mil|Location2.X=9364.337mil|Location1.Y=2794.658mil|Location2.Y=2805.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9353.087mil|Location2.X=9364.337mil|Location1.Y=2794.658mil|Location2.Y=2805.908mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.161mm &lt; 0.254mm) Between Pad C16-2(78.675mm,20.75mm) on Top Layer And Text "C16" (79.119mm,21.861mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.161mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8718.817mil|Location2.X=8730.067mil|Location1.Y=2617.436mil|Location2.Y=2628.686mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8718.817mil|Location2.X=8730.067mil|Location1.Y=2617.436mil|Location2.Y=2628.686mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.142mm &lt; 0.254mm) Between Pad C19-1(62.375mm,17.4mm) on Top Layer And Text "C19" (62.875mm,16.708mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.142mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9291.166mil|Location2.X=9302.416mil|Location1.Y=2876.786mil|Location2.Y=2888.036mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\RaspberryPi3_Cape_V1.0\RaspberryPi3_Cape_V1.0\Raspi3_Cape_V1.0\RaspberryPi3_Cape_V1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9291.166mil|Location2.X=9302.416mil|Location1.Y=2876.786mil|Location2.Y=2888.036mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.217mm &lt; 0.254mm) Between Pad C9-1(77.75mm,24.025mm) on Bottom Layer And Text "C9" (77.313mm,23.283mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.217mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -2,17 +2,6 @@
 FileName = RaspberryPi3_Cape_V1.0.GBR
 AutoAperture = True
 *************************************************************
-Generating : Keep-Out Layer
-      File : RaspberryPi3_Cape_V1.0.GKO
-
-    Adding Layer      : Keep-Out Layer
-
-
-Used DCodes :
-    D32
-*************************************************************
-
-*************************************************************
 Generating : Bottom Layer
       File : RaspberryPi3_Cape_V1.0.GBL
 
@@ -22,10 +11,16 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D14
-    D20
+    D10
+    D17
+    D18
+    D24
+    D25
+    D26
+    D29
     D30
     D31
+    D32
     D33
     D34
     D35
@@ -34,16 +29,6 @@ Used DCodes :
     D38
     D39
     D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
 *************************************************************
 
 *************************************************************
@@ -81,38 +66,16 @@ Used DCodes :
     D32
     D33
     D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
 *************************************************************
 
 *************************************************************
-Generating : Drill Drawing
-      File : RaspberryPi3_Cape_V1.0.GD1
+Generating : Board Outline
+      File : RaspberryPi3_Cape_V1.0.GM5
 
-    Adding Drill Pair : Top Layer-Bottom Layer
-
-    Adding Layer      : Drill Drawing
+    Adding Layer      : Board Outline
 
 
 Used DCodes :
-    D51
-    D52
-*************************************************************
-
-*************************************************************
-Generating : Drill Guide
-      File : RaspberryPi3_Cape_V1.0.GG1
-
-    Adding Drill Pair : Top Layer-Bottom Layer
-
-    Adding Layer      : Drill Guide
-
-
-Used DCodes :
-    D51
+    D28
 *************************************************************
 
